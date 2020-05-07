@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  api:
+    image: webapp
+    restart: always
+    container_name: mywebapp
+    build:
+        context: ./src
+    volumes:
+      - ./src/myApp:/usr/local/tomcat/webapps/myApp
+    ports:
+      - "80:8080"
